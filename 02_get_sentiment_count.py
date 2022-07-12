@@ -23,7 +23,19 @@ def get_sentiment_count(filename, sentiment_type):
   }
 
   # Delete the bellow line and write your implementation
-  pass
+  f=open(filename,'r')
+  c=0
+  x=f.read()
+  y=x.split()
+  for i,j in sentiment_words.items():
+    if(i==sentiment_type):
+      z=j
+      for a in y:
+        for b in z:
+          if(a==b):
+            c+=1
+  f.close()
+  return c
 
   
 # don't touch the code bellow
