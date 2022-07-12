@@ -35,7 +35,26 @@ def sentiment_analysis(filename):
   sentiment_words = {"positive":["good","excellent","happy","positive","respect","respectful","respected","nice","constructive"], "negative": ["bad","worse","worsening","worsened","disrespect","ugly","down","vulnerability","vulnerable","disastrous","destructive"]}
 
   # Delete the bellow line and write your implementation
-  pass
+  c=0
+  d=0
+  f=open(filename,'r')
+  x=f.read()
+  y=x.split()
+  for i in sentiment_words['positive']:
+    for j in y:
+      if i==j:
+        c+=1
+  for i in sentiment_words['negative']:
+    for j in y:
+      if i==j:
+        d+=1
+  f.close()
+  if c>d and (c-d)>2:
+    return 'positive comment'
+  elif d>c and (d-c)>2:
+    return 'negative comment'
+  else:
+    return 'neutral comment'
 
 # don't touch the code bellow
 
