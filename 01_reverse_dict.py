@@ -26,6 +26,12 @@ def reverse(original):
   """
   reversed_dict = {}
   # Write your code here
+   for i,j in original.items():
+    l=[]
+    for m,n in original.items():
+      if j==n:
+        l.append(m)
+    reversed_dict.update({j:l})
   
   return reversed_dict
 
